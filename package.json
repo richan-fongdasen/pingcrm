@@ -6,7 +6,7 @@
         "fix:prettier": "prettier --write --loglevel warn 'resources/js/**/*.vue'",
         "fix-code-style": "npm run fix:prettier && npm run fix:eslint",
         "heroku-postbuild": "npm run build",
-        "dev": "vite",
+        "dev": "vite --host",
         "build": "vite build && vite build --ssr"
     },
     "devDependencies": {
@@ -27,5 +27,8 @@
         "uuid": "^8.3.2",
         "vite": "^5.2.7",
         "vue": "^3.2.27"
+    },
+    "dependencies": {
+        "@libsql/client": "^0.6.0"
     }
 }

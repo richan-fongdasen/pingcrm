@@ -1,6 +1,12 @@
-# Ping CRM
+# Ping CRM with Turso Database
 
-A demo application to illustrate how Inertia.js works.
+> This is a forked repository of the original [Ping CRM](https://github.com/inertiajs/pingcrm), a demo project showcasing Inertia.js with Laravel.
+
+You can access this demo application online at [https://pingcrm.richan.id/](https://pingcrm.richan.id/).
+
+This demo application illustrates how Laravel and Inertia.js work perfectly with the Turso database. The original Ping CRM uses an SQLite database, but this forked repository uses the Turso database.
+
+The Turso database connection in this demo application is made possible by integrating the [Turso Database Driver for Laravel](https://github.com/richan-fongdasen/turso-laravel) package.
 
 ![](https://raw.githubusercontent.com/inertiajs/pingcrm/master/screenshot.png)
 
@@ -43,10 +49,15 @@ Generate application key:
 php artisan key:generate
 ```
 
-Create an SQLite database. You can also use another database (MySQL, Postgres), simply update your configuration accordingly.
+Save your Turso database credentials in the `.env` file. You can either obtain the Turso database credentials by following the [instructions here](https://docs.turso.tech/sdk/http/quickstart) or use the Turso local development server as described in the [local development guide](https://docs.turso.tech/local-development#turso-cli). If you're using the local development server, set the `DB_URL` to `http://localhost:8080` and leave the `DB_ACCESS_TOKEN` empty.
 
-```sh
-touch database/database.sqlite
+```
+DB_CONNECTION=turso
+DB_URL=http://localhost:8080
+DB_ACCESS_TOKEN=
+DB_REPLICA=
+DB_PREFIX=
+DB_FOREIGN_KEYS=true
 ```
 
 Run database migrations:

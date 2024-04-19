@@ -15,11 +15,14 @@
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^1.0",
         "laravel/framework": "^11.1",
+        "laravel/octane": "^2.3",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "league/glide-symfony": "^2.0"
+        "league/glide-symfony": "^2.0",
+        "richan-fongdasen/turso-laravel": "dev-main"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.13",
         "larastan/larastan": "^2.8",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
