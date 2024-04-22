@@ -1,0 +1,44 @@
+name: Reset Database
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+
+jobs:
+  reset-database:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ubuntu-latest]
+        php: [8.3]
+
+    name: PHP${{ matrix.php }} - ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, openssl, pcntl, pdo, pdo_sqlite, sqlite3, tokenizer, xml, zip
+          coverage: none
+
+      - name: Install dependencies
+        run: |
+          composer update --prefer-stable --prefer-dist --no-interaction
+
+      - name: List Installed Dependencies
+        run: composer show -D
+
+      - name: Reset Database
+        env:
+          APP_ENV: ${{ secrets.APP_ENV }}
+          APP_KEY: ${{ secrets.APP_KEY }}
+          DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_ACCESS_TOKEN: ${{ secrets.DB_ACCESS_TOKEN }}
+        run: php artisan migrate:fresh --seed --force
