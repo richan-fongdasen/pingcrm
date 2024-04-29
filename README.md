@@ -6,6 +6,8 @@ You can access this demo application online at [https://pingcrm.richan.id/](http
 
 This demo application illustrates how Laravel and Inertia.js work perfectly with the Turso database. The original Ping CRM uses an SQLite database, but this forked repository uses the Turso database.
 
+This demo has adopted the [Turso Embedded Replica](https://turso.tech/blog/introducing-embedded-replicas-deploy-turso-anywhere-2085aa0dc242) feature, boosting the application's performance to be super fast! 🚀
+
 The Turso database connection in this demo application is made possible by integrating the [Turso Database Driver for Laravel](https://github.com/richan-fongdasen/turso-laravel) package.
 
 ![](https://raw.githubusercontent.com/inertiajs/pingcrm/master/screenshot.png)
