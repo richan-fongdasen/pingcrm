@@ -41,4 +41,6 @@ jobs:
           DB_CONNECTION: ${{ secrets.DB_CONNECTION }}
           DB_URL: ${{ secrets.DB_URL }}
           DB_ACCESS_TOKEN: ${{ secrets.DB_ACCESS_TOKEN }}
+          TURSO_CONNECT_TIMEOUT: ${{ secrets.TURSO_CONNECT_TIMEOUT }}
+          TURSO_REQUEST_TIMEOUT: ${{ secrets.TURSO_REQUEST_TIMEOUT }}
         run: php artisan migrate:fresh --seed --force
