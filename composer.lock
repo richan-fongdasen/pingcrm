@@ -3699,12 +3699,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/richan-fongdasen/turso-laravel.git",
-                "reference": "1e089c909883ae529e871d7b2988f093405cc893"
+                "reference": "0ce0a8bd1116f316d2fd1f11cc0f496320bc67e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/richan-fongdasen/turso-laravel/zipball/1e089c909883ae529e871d7b2988f093405cc893",
-                "reference": "1e089c909883ae529e871d7b2988f093405cc893",
+                "url": "https://api.github.com/repos/richan-fongdasen/turso-laravel/zipball/0ce0a8bd1116f316d2fd1f11cc0f496320bc67e4",
+                "reference": "0ce0a8bd1116f316d2fd1f11cc0f496320bc67e4",
                 "shasum": ""
             },
             "require": {
@@ -3779,7 +3779,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-06T17:05:06+00:00"
+            "time": "2024-11-07T05:31:39+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
